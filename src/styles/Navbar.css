@@ -1,0 +1,22 @@
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgb(170, 255, 0);
+    padding: 10px;
+}
+
+.nav-box {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-box li {
+    color:brown;
+    cursor: pointer;
+    padding: 0 10px;
+}

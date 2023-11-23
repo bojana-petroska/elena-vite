@@ -1,0 +1,16 @@
+/* MainContent.css */
+
+.ellipse {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  #ellipse {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  
+
+  
