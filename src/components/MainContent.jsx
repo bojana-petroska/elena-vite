@@ -1,12 +1,34 @@
 // MainContent.jsx
 
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../styles/MainContent.css';
 import Elena from '../assets/Ellipse 107.jpg'
 import Ellipse from '../assets/Group 1.jpg'
 
 function MainContent() {
+
+  const sentences = [
+    `"How you do anything is how you do everything!" - Martha Beck`,
+    `"The only way to do great work is to love what you do." - Steve Jobs`,
+    `"Believe you can and you're halfway there." - Theodore Roosevelt`,
+    `"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill`
+  ];
+
+  const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
+  
   useEffect(() => {
+
+    const timer = setInterval(() => {
+      setCurrentSentenceIndex((prevIndex) => (prevIndex + 1) % sentences.length)
+    }, 2000);
+    
+    return () => clearInterval(timer); 
+  }, [currentSentenceIndex, sentences.length]);
+
+  const currentSentence = sentences[currentSentenceIndex];
+  
+  useEffect(() => {
+
         let animationFrameId;
 
         const preloadImages = () => {
@@ -74,8 +96,7 @@ function MainContent() {
       </div>
     </div>
 
-    <h3>“How you do anything is how you     
-          do everything!“</h3>
+    <h3 id='animated-text' className='animated-text'>{currentSentence}</h3>
       <h5>- Martha Beck</h5>
     </main>
   );
